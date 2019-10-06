@@ -1,2 +1,7 @@
-<!--pages/home/home.wxml-->
-<my-btn titles="{{msg}}" />
+<!-- pages/home/home.wxml -->
+<h-swiper list="{{banners}}" />
+<w-recommend recommendList="{{recommends}}" />
+<view class="popular" hover-class="none" hover-stop-propagation="false">
+  <image class="" src="/assets/images/home/recommend_bg.jpg" mode="widthFix"></image>
+</view>
+<tabControl titles="{{titles}}"  />
