@@ -1,7 +1,26 @@
 <!-- pages/home/home.wxml -->
 <h-swiper list="{{banners}}" />
+
 <w-recommend recommendList="{{recommends}}" />
+
 <view class="popular" hover-class="none" hover-stop-propagation="false">
   <image class="" src="/assets/images/home/recommend_bg.jpg" mode="widthFix"></image>
 </view>
-<tabControl titles="{{titles}}"  />
+
+<tabControl titles="{{titles}}" bind:tabClick="handleTabClick" />
+
+<backTtop wx:if="{{backData}}"   />
+
+<view class="goods">
+  <block wx:for="{{goods[currentType].list}}" wx:key="{{index}}">
+    <view class="goods-item">
+      <image src="{{item.show.img}}"></image>
+      <view class="title">{{item.title}}</view>
+      <view class="content">
+      <text class="price">￥{{item.price}}</text>  
+      <text class="cfav">收藏：{{item.cfav}}</text>
+      </view>
+    </view>
+  </block>
+</view>
+
